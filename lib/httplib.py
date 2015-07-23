@@ -8,7 +8,7 @@ from python_std_lib import httplib as sockets_httplib
 globals().update(gae_httplib.__dict__)
 
 def is_called_by_requests():
-	# Get the module that called us two operations up the stack
+    # Get the module that called us two operations up the stack
     caller = inspect.stack()[2]
     module = inspect.getmodule(caller[0]).__name__
     return module.startswith('requests.packages.urllib3.')
